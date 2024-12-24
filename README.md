@@ -2,7 +2,48 @@
 
 A project to create custom Streamlit components using React and TypeScript for analytics and insights.
 
+View a demo: [💾](https://analytics-cards.streamlit.app/)
+
+## Using the component
+
+## **Prerequisites**
+
+- [Python 3.7+](https://www.python.org/downloads/)
+- [Streamlit](https://docs.streamlit.io/)
+
+## **Installation**
+
+```bash
+pip install streamlit-analytics-cards
+```
+
+## **Implementation**
+
+```python
+import streamlit-analytics-cards as stac
+# Add your dictionary of data
+data = {
+"template": "CardOne",
+"title": "Attrition Diversity",
+"subtitle": "Female Attrition",
+"mainValue": "4.7%",
+"secondaryValue": "52",
+"trendValue": "Y/Y 5.1%, -0.4%",
+"chartData": [10, 20, 15, 30, 25],
+"colorScheme": {
+      "background": "#FFFFFF",
+      "text": "#000000",
+      "trend": "#B2FEF7",
+},
+"genderFilter": "Male",
+}
+# Render the component in your Streamlit app
+stac.card(data=data)
+```
+
 ---
+
+## For developers
 
 ## **Prerequisites**
 

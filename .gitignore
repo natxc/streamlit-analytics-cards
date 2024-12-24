@@ -169,3 +169,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Pre-commit
+.pre-commit-config.yaml
+
+.DS_Store

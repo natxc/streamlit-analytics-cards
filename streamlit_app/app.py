@@ -1,23 +1,44 @@
 import streamlit as st
-from custom_components import my_component
+from custom_components.card_component import render_cards
 
 if __name__ == "__main__":
-    st.title("Merry Christmas 🎄")
+    st.set_page_config(page_title="Show Us The Cards", page_icon="📈", layout="wide")
+    st.title(
+        "Example Cards 🃏",
+    )
 
-    data = {
-        "title": "Attrition Diversity",
-        "subtitle": "Female Attrition",
-        "mainValue": "4.7%",
-        "secondaryValue": "52",
-        "trendValue": "Y/Y 5.1%, -0.4%",
-        "chartData": [10, 20, 15, 30, 25],
-        "colorScheme": {
-            "background": "#FFFFFF",
-            "text": "#000000",
-            "trend": "#B2FEF7",
-        },
-        "genderFilter": "Male",
-    }
+    st.caption(
+        "Information About the Cards",
+        unsafe_allow_html=False,
+        help="There are a few different types of cards and they each take different \
+            fields. They can connect dirrectly to a data source too.",
+    )
 
-    # Render the component
-    my_component(data=data)
+    with st.expander("Code example"):
+
+        code = """
+        # pip install streamlit-analytics-cards
+        import streamlit-analytics-cards as stac
+        data = {
+            "template": "CardOne",
+            "title": "Attrition Diversity",
+            "subtitle": "Female Attrition",
+            "mainValue": "4.7%",
+            "secondaryValue": "52",
+            "trendValue": "Y/Y 5.1%, -0.4%",
+            "chartData": [10, 20, 15, 30, 25],
+            "colorScheme": {
+                "background": "#FFFFFF",
+                "text": "#000000",
+                "trend": "#B2FEF7",
+            },
+            "genderFilter": "Male",
+        }
+
+        # Render the component
+        stac.card(data=data)"""
+        st.code(code, language="python")
+
+    st.subheader("Example usage", divider=True)
+
+    render_cards()

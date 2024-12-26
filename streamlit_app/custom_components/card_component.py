@@ -165,6 +165,87 @@ data_6 = {
     },
 }
 
+tableData3 = [
+    {"label": "AI/ML", "value": 70},
+    {"label": "IS&T", "value": 50},
+    {"label": "HW TECH", "value": 90},
+    {"label": "Services", "value": 100},
+]
+
+data_7 = {
+    "template": "CardFour",
+    "title": "Transfers Out",
+    "mainValue": "125",
+    "subtitle": "Exits to another organization",
+    "bars": tableData3,
+    "colorScheme": {
+        "background": "#FFFFFF",
+        "text": "#000000",
+        "bar": "#E0E0E0",
+    },
+}
+
+tableData4 = [
+    {"label": "Apple", "value": 90},
+    {"label": "R&D Orgs", "value": 50},
+    {"label": "USA", "value": 70},
+    {"label": "International", "value": 100},
+]
+
+data_8 = {
+    "template": "CardFour",
+    "title": "Attrition Comparisons",
+    "bars": tableData4,
+    "marker": 38,
+    "markerLabel": "Software 3.8%",
+    "colorScheme": {
+        "background": "#FFFFFF",
+        "text": "#000000",
+        "bar": "#E0E0E0",
+        "marker": "#FF0000",
+    },
+}
+
+tableDataProjects = [
+    {"label": "On Track", "value": 85},
+    {"label": "At Risk", "value": 45},
+    {"label": "Delayed", "value": 25},
+    {"label": "Completed", "value": 120},
+]
+
+data_projects = {
+    "template": "CardFour",
+    "title": "Project Status",
+    "mainValue": "275",
+    "subtitle": "Total Tasks Across Projects",
+    "bars": tableDataProjects,
+    "colorScheme": {
+        "background": "#F8F9FA",
+        "text": "#212529",
+        "bar": "#17A2B8",
+    },
+}
+
+tableDataSales = [
+    {"label": "Q1", "value": 200000},
+    {"label": "Q2", "value": 180000},
+    {"label": "Q3", "value": 220000},
+    {"label": "Q4", "value": 240000},
+]
+
+data_sales = {
+    "template": "CardFour",
+    "title": "Quarterly Sales",
+    "bars": tableDataSales,
+    "marker": 90,
+    "markerLabel": "Avg. Sales",
+    "colorScheme": {
+        "background": "#FFFFFF",
+        "text": "#333333",
+        "bar": "#FFC107",
+    },
+}
+
 
 # Functions to render the cards
 def render_cards_1():
@@ -180,3 +261,10 @@ def render_cards_2():
 def render_cards_3():
     my_component(data_5, key="card_5")
     my_component(data_6, key="card_6")
+
+
+def render_cards_4():
+    my_component(data_7, key="card_7")
+    my_component(data_8, key="card_8")
+    my_component(data_projects, key="card_9")
+    my_component(data_sales, key="card_10")

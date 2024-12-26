@@ -7,6 +7,7 @@ import {
 import CardOne from "./templates/cardOne";
 import CardTwo from "./templates/cardTwo";
 import CardThree from "./templates/cardThree";
+import CardFour from "./templates/cardFour";
 
 interface CardProps {
   template: "CardOne";
@@ -54,6 +55,19 @@ class Card extends StreamlitComponentBase<CardProps> {
             colorScheme={data?.colorScheme}
           />
         );
+      case "CardFour":
+        return (
+          <CardFour
+            title={data?.title}
+            mainValue={data?.mainValue}
+            subtitle={data?.subtitle}
+            bars={data?.bars}
+            colorScheme={data?.colorScheme}
+            marker={data?.marker}
+            markerLabel={data?.markerLabel}
+          />
+        );
+
       default:
         console.error("Invalid template:", template);
         return <div>Invalid template</div>;

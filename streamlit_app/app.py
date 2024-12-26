@@ -3,6 +3,7 @@ from custom_components.card_component import (
     render_cards_1,
     render_cards_2,
     render_cards_3,
+    render_cards_4,
 )
 
 if __name__ == "__main__":
@@ -53,3 +54,6 @@ if __name__ == "__main__":
 
     render_cards_3()
     st.caption("Template: CardThree")
+
+    render_cards_4()
+    st.caption("Template: CardFour")

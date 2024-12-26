@@ -2,11 +2,73 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
-  max-width: 300px;
+  max-width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.card h3 {
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
+  overflow-y: auto;
+  max-height: 100%;
+  scrollbar-width: none;
+}
+
+.card ul::-webkit-scrollbar {
+  width: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover ul::-webkit-scrollbar {
+  opacity: 1;
+}
+
+.card:hover ul::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.card:hover ul::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.card:hover ul {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+.card strong {
+  font-weight: bold;
+  color: #000;
 }
 
 .card-subtitle {

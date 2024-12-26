@@ -5,6 +5,7 @@ import {
   withStreamlitConnection,
 } from "streamlit-component-lib";
 import CardOne from "./templates/cardOne";
+import CardTwo from "./templates/cardTwo";
 
 interface CardProps {
   template: "CardOne";
@@ -33,7 +34,15 @@ class Card extends StreamlitComponentBase<CardProps> {
             colorScheme={data?.colorScheme}
           />
         );
-
+      case "CardTwo":
+        return (
+          <CardTwo
+            title={data?.title}
+            subtitle={data?.subtitle}
+            insights={data?.insights}
+            colorScheme={data?.colorScheme}
+          />
+        );
       default:
         console.error("Invalid template:", template);
         return <div>Invalid template</div>;

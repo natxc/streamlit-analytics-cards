@@ -1,5 +1,9 @@
 import streamlit as st
-from custom_components.card_component import render_cards_1, render_cards_2
+from custom_components.card_component import (
+    render_cards_1,
+    render_cards_2,
+    render_cards_3,
+)
 
 if __name__ == "__main__":
     st.set_page_config(page_title="Show Us The Cards", page_icon="📈", layout="wide")
@@ -46,3 +50,6 @@ if __name__ == "__main__":
 
     render_cards_2()
     st.caption("Template: CardTwo")
+
+    render_cards_3()
+    st.caption("Template: CardThree")

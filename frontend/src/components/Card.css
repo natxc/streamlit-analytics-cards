@@ -11,19 +11,6 @@
   overflow: hidden;
 }
 
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  max-width: 400px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
 .card ul {
   list-style-type: none;
   padding: 0;
@@ -114,4 +101,55 @@
 .card-button.active {
   background-color: #000;
   color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  table-layout: auto;
+  border-spacing: 12px 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  min-width: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;
+}
+
+th {
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 40%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 20%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 20%;
 }

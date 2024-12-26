@@ -71,6 +71,100 @@ data_4 = {
     },
 }
 
+tableData = [
+    {"employee": "Lazy Sue", "date": "8/1/2024"},
+    {"employee": "Sleepy Sam", "date": "9/7/2024"},
+    {"employee": "Awesome Ann", "date": "7/8/2024", "key": "Y"},
+    {"employee": "GPT Greg", "date": "10/1/2024"},
+]
+
+data_5 = {
+    "template": "CardThree",
+    "title": "Future Exits",
+    "mainValue": "12",
+    "subtitle": "in next 60 days",
+    "tableData": tableData,
+    "colorScheme": {
+        "background": "#FFFFFF",
+        "text": "#000000",
+    },
+}
+
+tableData2 = [
+    {
+        "project": "Website Redesign",
+        "deadline": "8/15/2024",
+        "status": "On Track",
+        "priority": "High",
+    },
+    {
+        "project": "Marketing Campaign",
+        "deadline": "9/1/2024",
+        "status": "At Risk",
+        "priority": "Medium",
+    },
+    {
+        "project": "Product Launch",
+        "deadline": "10/20/2024",
+        "status": "Delayed",
+        "priority": "High",
+    },
+    {
+        "project": "Data Migration",
+        "deadline": "11/5/2024",
+        "status": "On Track",
+        "priority": "Low",
+    },
+    {
+        "project": "Q4 Sales Plan",
+        "deadline": "9/25/2024",
+        "status": "On Track",
+        "priority": "Medium",
+    },
+    {
+        "project": "Mobile App Update",
+        "deadline": "10/10/2024",
+        "status": "Delayed",
+        "priority": "High",
+    },
+    {
+        "project": "Customer Support Overhaul",
+        "deadline": "12/15/2024",
+        "status": "On Track",
+        "priority": "Low",
+    },
+    {
+        "project": "Cloud Infrastructure",
+        "deadline": "8/30/2024",
+        "status": "At Risk",
+        "priority": "High",
+    },
+    {
+        "project": "SEO Optimization",
+        "deadline": "7/30/2024",
+        "status": "On Track",
+        "priority": "Medium",
+    },
+    {
+        "project": "New Feature Development",
+        "deadline": "11/20/2024",
+        "status": "Delayed",
+        "priority": "High",
+    },
+]
+
+data_6 = {
+    "template": "CardThree",
+    "title": "Project Deadlines",
+    "mainValue": "4",
+    "subtitle": "Upcoming Projects",
+    "tableData": tableData2,
+    "colorScheme": {
+        "background": "#FFFFFF",
+        "text": "#000000",
+    },
+}
+
 
 # Functions to render the cards
 def render_cards_1():
@@ -81,3 +175,8 @@ def render_cards_1():
 def render_cards_2():
     my_component(data_3, key="card_3")
     my_component(data_4, key="card_4")
+
+
+def render_cards_3():
+    my_component(data_5, key="card_5")
+    my_component(data_6, key="card_6")

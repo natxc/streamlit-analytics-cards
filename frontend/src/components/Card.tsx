@@ -6,6 +6,7 @@ import {
 } from "streamlit-component-lib";
 import CardOne from "./templates/cardOne";
 import CardTwo from "./templates/cardTwo";
+import CardThree from "./templates/cardThree";
 
 interface CardProps {
   template: "CardOne";
@@ -40,6 +41,16 @@ class Card extends StreamlitComponentBase<CardProps> {
             title={data?.title}
             subtitle={data?.subtitle}
             insights={data?.insights}
+            colorScheme={data?.colorScheme}
+          />
+        );
+      case "CardThree":
+        return (
+          <CardThree
+            title={data?.title}
+            mainValue={data?.mainValue}
+            subtitle={data?.subtitle}
+            tableData={data?.tableData}
             colorScheme={data?.colorScheme}
           />
         );

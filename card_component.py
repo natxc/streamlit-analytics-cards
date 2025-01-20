@@ -226,7 +226,7 @@ def render_cards_1():
     col1, col2 = st.columns(2)
 
     with col1:
-        stac.card(
+        stac(
             template="CardOne",
             title="Attrition Diversity",
             subtitle="Female Attrition",
@@ -239,7 +239,7 @@ def render_cards_1():
             key="card_1",
         )
     with col2:
-        stac.card(
+        stac(
             template="CardOne",
             title="Revenue Growth",
             subtitle="Quarterly Performance",

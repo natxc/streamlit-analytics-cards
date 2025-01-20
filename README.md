@@ -23,7 +23,7 @@ pip install streamlit-analytics-cards
 ```python
 from streamlit_analytics_cards import card as stac
 # Render the component in your Streamlit app
-stac.card(
+stac(
             template="CardOne",
             title="Attrition Diversity",
             subtitle="Female Attrition",

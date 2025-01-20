@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
         # Render the components
         with col1:
-            stac.card(
+            stac(
                 template="CardOne",
                 title="Attrition Diversity",
                 subtitle="Female Attrition",
@@ -49,7 +49,7 @@ if __name__ == "__main__":
             )
 
         with col2:
-            stac.card(
+            stac(
                 template="CardOne",
                 title="Revenue Growth",
                 subtitle="Quarterly Performance",

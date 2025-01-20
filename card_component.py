@@ -214,6 +214,97 @@ data_sales = {
     },
 }
 
+tableData5 = [
+    {"label": "Headcount", "value": "4,228"},
+    {"label": "Directs", "value": "9"},
+    {"label": "Org Depth", "value": "8"},
+]
+
+dotPlots5 = [
+    {
+        "title": "Percentile Corporate Leaders",
+        "subtitle": "50TH",
+        "percentiles": [{"value": 50, "label": "50TH"}],
+        "dots": [{"row": 1, "col": 2, "color": "#0000FF"}],
+    },
+    {
+        "title": "Percentile Operations LOB Leaders",
+        "subtitle": "50TH",
+        "percentiles": [{"value": 50, "label": "50TH"}],
+        "dots": [{"row": 2, "col": 3, "color": "#0000FF"}],
+    },
+    {
+        "title": "Percentile SF Bay Area Leaders",
+        "subtitle": "50TH",
+        "percentiles": [{"value": 50, "label": "50TH"}],
+        "dots": [{"row": 2, "col": 3, "color": "#0000FF"}],
+    },
+]
+
+data_9 = {
+    "template": "CardFive",
+    "title": "Organization Data",
+    "tableData": tableData5,
+    "dotPlots": dotPlots5,
+    "colorScheme": {"background": "#FFFFFF", "text": "#000000", "dot": "#0000FF"},
+}
+
+tableData6 = [
+    {"label": "Height", "value": "6'3\"", "percentile": 50, "color": "#FF4500"},
+    {"label": "Weight", "value": "190", "percentile": 50, "color": "#FF4500"},
+    {"label": "Draft position", "value": "7", "percentile": 90, "color": "#1E90FF"},
+]
+
+dotPlots6 = [
+    {
+        "title": "Vitals",
+        "subtitle": "Height, Weight, Draft Position",
+        "percentiles": [
+            {"value": 50, "label": "50TH"},  # Example percentile marker
+            {"value": 90, "label": "90TH"},
+        ],
+        "dots": [
+            {"row": 1, "col": 2, "color": "#FF4500"},  # Height percentile dot
+            {"row": 2, "col": 2, "color": "#FF4500"},  # Weight percentile dot
+            {"row": 3, "col": 4, "color": "#1E90FF"},  # Draft position percentile dot
+        ],
+    },
+    {
+        "title": "Scoring",
+        "subtitle": "True Shooting %, Free Throw %, Usage %",
+        "percentiles": [
+            {"value": 70, "label": "70TH"},
+            {"value": 95, "label": "95TH"},
+            {"value": 80, "label": "80TH"},
+        ],
+        "dots": [
+            {"row": 1, "col": 3, "color": "#1E90FF"},  # True shooting %
+            {"row": 2, "col": 5, "color": "#1E90FF"},  # Free throw %
+            {"row": 3, "col": 4, "color": "#1E90FF"},  # Usage %
+        ],
+    },
+    {
+        "title": "Tendencies",
+        "subtitle": "3 pt. Frequency, FT Frequency",
+        "percentiles": [
+            {"value": 60, "label": "60TH"},
+            {"value": 50, "label": "50TH"},
+        ],
+        "dots": [
+            {"row": 1, "col": 3, "color": "#1E90FF"},  # 3 pt. frequency
+            {"row": 2, "col": 2, "color": "#FFFFFF"},  # FT frequency
+        ],
+    },
+]
+
+data_10 = {
+    "template": "CardFive",
+    "title": "Player Stats Last Three Seasons",
+    "tableData": tableData6,
+    "dotPlots": dotPlots6,
+    "colorScheme": {"background": "#FFFFFF", "text": "#000000", "dot": "#1E90FF"},
+}
+
 
 # Functions to render the cards
 def render_cards_1():
@@ -271,3 +362,7 @@ def render_cards_1():
 #     card(data_8, key="card_8")
 #     card(data_projects, key="card_9")
 #     card(data_sales, key="card_10")
+
+def render_cards_5():
+    card(data_9, key="card_11")
+    card(data_10, key="card_12")

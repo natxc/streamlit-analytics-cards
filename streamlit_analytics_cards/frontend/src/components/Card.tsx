@@ -7,6 +7,7 @@ import CardOne from "./templates/cardOne";
 import CardTwo from "./templates/cardTwo";
 import CardThree from "./templates/cardThree";
 import CardFour from "./templates/cardFour";
+import CardFive from "./templates/cardFive";
 
 interface CardProps {
   template: "CardOne" | "CardTwo" | "CardThree" | "CardFour" | "CardFive";
@@ -46,6 +47,7 @@ class Card extends StreamlitComponentBase<CardProps> {
       bars,
       marker,
       markerLabel,
+      dotPlots,
       colorScheme,
     } = this.props.args;
 
@@ -97,6 +99,15 @@ class Card extends StreamlitComponentBase<CardProps> {
             colorScheme={colorScheme}
             marker={marker}
             markerLabel={markerLabel}
+          />
+        );
+      case "CardFive":
+        return (
+          <CardFive
+            title={title}
+            tableData={tableData}
+            dotPlots={dotPlots}
+            colorScheme={colorScheme}
           />
         );
       default:

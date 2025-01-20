@@ -174,3 +174,5 @@ cython_debug/
 .pre-commit-config.yaml
 
 .DS_Store
+
+node_modules/

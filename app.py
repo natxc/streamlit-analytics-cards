@@ -1,5 +1,5 @@
 import streamlit as st
-from custom_components.card_component import (
+from card_component import (
     render_cards_1,
     # render_cards_2,
     # render_cards_3,

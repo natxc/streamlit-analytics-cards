@@ -1,4 +1,4 @@
-from custom_components import my_component
+from streamlit_analytics_cards import card
 
 data_3 = {
     "template": "CardTwo",
@@ -226,7 +226,7 @@ def render_cards_1():
     col1, col2 = st.columns(2)
 
     with col1:
-        my_component(
+        card(
             template="CardOne",
             title="Attrition Diversity",
             subtitle="Female Attrition",
@@ -239,7 +239,7 @@ def render_cards_1():
             key="card_1",
         )
     with col2:
-        my_component(
+        card(
             template="CardOne",
             title="Revenue Growth",
             subtitle="Quarterly Performance",
@@ -257,17 +257,17 @@ def render_cards_1():
 
 
 # def render_cards_2():
-#     my_component(data_3, key="card_3")
-#     my_component(data_4, key="card_4")
+#     card(data_3, key="card_3")
+#     card(data_4, key="card_4")
 
 
 # def render_cards_3():
-#     my_component(data_5, key="card_5")
-#     my_component(data_6, key="card_6")
+#     card(data_5, key="card_5")
+#     card(data_6, key="card_6")
 
 
 # def render_cards_4():
-#     my_component(data_7, key="card_7")
-#     my_component(data_8, key="card_8")
-#     my_component(data_projects, key="card_9")
-#     my_component(data_sales, key="card_10")
+#     card(data_7, key="card_7")
+#     card(data_8, key="card_8")
+#     card(data_projects, key="card_9")
+#     card(data_sales, key="card_10")

@@ -3,6 +3,7 @@
 A project to create custom Streamlit components using React and TypeScript for analytics and insights.
 
 View a demo: [💾](https://analytics-cards.streamlit.app/)
+View it on PyPI: [👾](https://pypi.org/project/streamlit-analytics-cards/0.1.0/)
 
 ## Using the component
 
@@ -112,7 +113,7 @@ streamlit run streamlit_app/app.py
    This will create a production-ready build in the `frontend/build` directory.
 
 2. **Run Streamlit in Production Mode**:
-   Ensure `_RELEASE` is set to `True` in the `custom_components/__init__.py` file:
+   Ensure `_RELEASE` is set to `True` in the `__init__.py` file:
 
    ```python
    _RELEASE = True

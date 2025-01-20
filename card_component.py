@@ -1,4 +1,4 @@
-from streamlit_analytics_cards import card
+from streamlit_analytics_cards import card as stac
 
 data_3 = {
     "template": "CardTwo",
@@ -226,7 +226,7 @@ def render_cards_1():
     col1, col2 = st.columns(2)
 
     with col1:
-        card(
+        stac.card(
             template="CardOne",
             title="Attrition Diversity",
             subtitle="Female Attrition",
@@ -239,7 +239,7 @@ def render_cards_1():
             key="card_1",
         )
     with col2:
-        card(
+        stac.card(
             template="CardOne",
             title="Revenue Growth",
             subtitle="Quarterly Performance",

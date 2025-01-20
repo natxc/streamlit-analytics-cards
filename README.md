@@ -21,7 +21,7 @@ pip install streamlit-analytics-cards
 ## **Implementation**
 
 ```python
-import streamlit-analytics-cards as stac
+from streamlit_analytics_cards import card as stac
 # Render the component in your Streamlit app
 stac.card(
             template="CardOne",

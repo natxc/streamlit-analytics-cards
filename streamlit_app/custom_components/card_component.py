@@ -1,37 +1,5 @@
 from custom_components import my_component
 
-# Define data for the cards
-data_1 = {
-    "template": "CardOne",
-    "title": "Attrition Diversity",
-    "subtitle": "Female Attrition",
-    "mainValue": "4.7%",
-    "secondaryValue": "52",
-    "trendValue": "Y/Y 5.1%, -0.4%",
-    "chartData": [10, 20, 15, 30, 25],
-    "colorScheme": {
-        "background": "#FFFFFF",
-        "text": "#000000",
-        "trend": "#B2FEF7",
-    },
-    "genderFilter": "Male",
-}
-
-data_2 = {
-    "template": "CardOne",
-    "title": "Revenue Growth",
-    "subtitle": "Quarterly Performance",
-    "mainValue": "$1.2M",
-    "secondaryValue": "35% Increase",
-    "trendValue": "Y/Y +10%",
-    "chartData": [15, 25, 20, 40, 35],
-    "colorScheme": {
-        "background": "#F3F4F6",
-        "text": "#1F2937",
-        "trend": "#34D399",
-    },
-}
-
 data_3 = {
     "template": "CardTwo",
     "title": "Attrition Risk Factors",
@@ -249,22 +217,57 @@ data_sales = {
 
 # Functions to render the cards
 def render_cards_1():
-    my_component(data_1, key="card_1")
-    my_component(data_2, key="card_2")
+    import pandas as pd
+    import streamlit as st
+
+    df = pd.DataFrame({"Number of Exits": [10, 20, 15, 30, 25, 10, 20, 15, 0, 7]})
+
+    # Optional
+    col1, col2 = st.columns(2)
+
+    with col1:
+        my_component(
+            template="CardOne",
+            title="Attrition Diversity",
+            subtitle="Female Attrition",
+            main_value="4.7%",
+            secondary_value="52",
+            delta="Y/Y 5.1%, -0.4%",
+            chart_data=df["Number of Exits"].tolist(),
+            x_axis_label=df.columns[0],
+            color_scheme={"background": "#FFFFFF", "text": "#000000"},
+            key="card_1",
+        )
+    with col2:
+        my_component(
+            template="CardOne",
+            title="Revenue Growth",
+            subtitle="Quarterly Performance",
+            main_value="$1.2M",
+            secondary_value="35% Increase",
+            delta="Y/Y +10%",
+            chart_data=[15, 25, 20, 40, 35],
+            color_scheme={
+                "background": "#F3F4F6",
+                "text": "#1F2937",
+                "trend": "#B2FEF7",
+            },
+            key="card_2",
+        )
 
 
-def render_cards_2():
-    my_component(data_3, key="card_3")
-    my_component(data_4, key="card_4")
+# def render_cards_2():
+#     my_component(data_3, key="card_3")
+#     my_component(data_4, key="card_4")
 
 
-def render_cards_3():
-    my_component(data_5, key="card_5")
-    my_component(data_6, key="card_6")
+# def render_cards_3():
+#     my_component(data_5, key="card_5")
+#     my_component(data_6, key="card_6")
 
 
-def render_cards_4():
-    my_component(data_7, key="card_7")
-    my_component(data_8, key="card_8")
-    my_component(data_projects, key="card_9")
-    my_component(data_sales, key="card_10")
+# def render_cards_4():
+#     my_component(data_7, key="card_7")
+#     my_component(data_8, key="card_8")
+#     my_component(data_projects, key="card_9")
+#     my_component(data_sales, key="card_10")

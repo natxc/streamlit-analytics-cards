@@ -21,24 +21,19 @@ pip install streamlit-analytics-cards
 
 ```python
 import streamlit-analytics-cards as stac
-# Add your dictionary of data
-data = {
-"template": "CardOne",
-"title": "Attrition Diversity",
-"subtitle": "Female Attrition",
-"mainValue": "4.7%",
-"secondaryValue": "52",
-"trendValue": "Y/Y 5.1%, -0.4%",
-"chartData": [10, 20, 15, 30, 25],
-"colorScheme": {
-      "background": "#FFFFFF",
-      "text": "#000000",
-      "trend": "#B2FEF7",
-},
-"genderFilter": "Male",
-}
 # Render the component in your Streamlit app
-stac.card(data=data)
+stac.card(
+            template="CardOne",
+            title="Attrition Diversity",
+            subtitle="Female Attrition",
+            main_value="4.7%",
+            secondary_value="52",
+            delta="Y/Y 5.1%, -0.4%",
+            chart_data=df["Number of Exits"].tolist(),
+            x_axis_label=df.columns[0],
+            color_scheme={"background": "#FFFFFF", "text": "#000000"},
+            key="card_1",
+        )
 ```
 
 ---

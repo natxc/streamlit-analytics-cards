@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Streamlit,
   StreamlitComponentBase,
   withStreamlitConnection,
 } from "streamlit-component-lib";
@@ -10,64 +9,96 @@ import CardThree from "./templates/cardThree";
 import CardFour from "./templates/cardFour";
 
 interface CardProps {
-  template: "CardOne";
+  template: "CardOne" | "CardTwo" | "CardThree" | "CardFour" | "CardFive";
+  title?: string;
+  subtitle?: string;
+  mainValue?: string;
+  secondaryValue?: string;
+  delta?: string;
+  chartData?: number[];
+  xAxisLabel?: string;
+  insights?: string[];
+  tableData?: any[];
+  bars?: any[];
+  marker?: any;
+  markerLabel?: string;
+  dotPlots?: any[];
   colorScheme?: {
     background: string;
     text: string;
-    trend: string;
+    trend?: string;
   };
 }
 
 class Card extends StreamlitComponentBase<CardProps> {
   public render() {
-    const { data } = this.props.args;
-    const { template } = data || {};
+    const {
+      template,
+      title,
+      subtitle,
+      mainValue,
+      secondaryValue,
+      delta,
+      chartData,
+      xAxisLabel,
+      insights,
+      tableData,
+      bars,
+      marker,
+      markerLabel,
+      colorScheme,
+    } = this.props.args;
+
+    const defaultGreen = "#34D399";
+    const defaultRed = "rgb(241, 155, 145)";
+    const trendColor =
+      colorScheme?.trend || (delta?.includes("-") ? defaultRed : defaultGreen);
 
     switch (template) {
       case "CardOne":
         return (
           <CardOne
-            title={data?.title}
-            subtitle={data?.subtitle}
-            mainValue={data?.mainValue}
-            secondaryValue={data?.secondaryValue}
-            trendValue={data?.trendValue}
-            chartData={data?.chartData}
-            colorScheme={data?.colorScheme}
+            title={title}
+            subtitle={subtitle}
+            mainValue={mainValue}
+            secondaryValue={secondaryValue}
+            delta={delta}
+            chartData={chartData}
+            xAxisLabel={xAxisLabel}
+            colorScheme={{ ...colorScheme, trend: trendColor }}
           />
         );
       case "CardTwo":
         return (
           <CardTwo
-            title={data?.title}
-            subtitle={data?.subtitle}
-            insights={data?.insights}
-            colorScheme={data?.colorScheme}
+            title={title}
+            subtitle={subtitle}
+            insights={insights}
+            colorScheme={colorScheme}
           />
         );
       case "CardThree":
         return (
           <CardThree
-            title={data?.title}
-            mainValue={data?.mainValue}
-            subtitle={data?.subtitle}
-            tableData={data?.tableData}
-            colorScheme={data?.colorScheme}
+            title={title}
+            mainValue={mainValue}
+            subtitle={subtitle}
+            tableData={tableData}
+            colorScheme={colorScheme}
           />
         );
       case "CardFour":
         return (
           <CardFour
-            title={data?.title}
-            mainValue={data?.mainValue}
-            subtitle={data?.subtitle}
-            bars={data?.bars}
-            colorScheme={data?.colorScheme}
-            marker={data?.marker}
-            markerLabel={data?.markerLabel}
+            title={title}
+            mainValue={mainValue}
+            subtitle={subtitle}
+            bars={bars}
+            colorScheme={colorScheme}
+            marker={marker}
+            markerLabel={markerLabel}
           />
         );
-
       default:
         console.error("Invalid template:", template);
         return <div>Invalid template</div>;

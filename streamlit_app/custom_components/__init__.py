@@ -1,35 +1,95 @@
 import os
 import streamlit.components.v1 as components
 
-# Set _RELEASE to True when you're ready to deploy the component
 _RELEASE = False
 
 if not _RELEASE:
-    # In development mode, load the component from the React dev server
     _component_func = components.declare_component(
         "my_component", url="http://localhost:3000"
     )
 else:
-    # In production mode, load the component from the build folder
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
     _component_func = components.declare_component("my_component", path=build_dir)
 
 
-def my_component(data: dict = None, key: str = None):
+def my_component(
+    template: str,
+    title: str = "",
+    subtitle: str = "",
+    main_value: str = "",
+    secondary_value: str = "",
+    delta: str = "",
+    chart_data: list = None,
+    x_axis_label: str = "",
+    insights: list = None,
+    table_data: list = None,
+    bars: list = None,
+    marker: float = None,
+    marker_label: str = "",
+    dot_plots: list = None,
+    color_scheme: dict = None,
+    key: str = None,
+):
     """
     Streamlit custom component.
 
     Parameters
     ----------
-    data : dict, optional
-        Data to pass to the component.
+    template : str
+        The type of card to render.
+    title : str, optional
+        Card title.
+    subtitle : str, optional
+        Card subtitle.
+    main_value : str, optional
+        Main value displayed on the card.
+    secondary_value : str, optional
+        Secondary value displayed.
+    delta : str, optional
+        Trend or comparison value.
+    chart_data : list, optional
+        Data for charts.
+    x_axis_label : str, optional
+        Label for x-axis of the chart.
+    insights : list, optional
+        Insights for the card.
+    table_data : list, optional
+        Table data.
+    bars : list, optional
+        Bar chart data.
+    marker : float, optional
+        Marker value for comparison.
+    marker_label : str, optional
+        Label for marker.
+    dot_plots : list, optional
+        Dot plot data.
+    color_scheme : dict, optional
+        Color settings for the card.
     key : str, optional
-        Unique key for the component.
+        Unique Streamlit key.
 
     Returns
     -------
     Any
         Value returned by the component.
     """
-    return _component_func(data=data, key=key)
+    data = {
+        "template": template,
+        "title": title,
+        "subtitle": subtitle,
+        "mainValue": main_value,
+        "secondaryValue": secondary_value,
+        "delta": delta,
+        "chartData": chart_data,
+        "xAxisLabel": x_axis_label,
+        "insights": insights,
+        "tableData": table_data,
+        "bars": bars,
+        "marker": marker,
+        "markerLabel": marker_label,
+        "dotPlots": dot_plots,
+        "colorScheme": color_scheme,
+    }
+
+    return _component_func(**data, key=key)

@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
         code = """
         # pip install streamlit-analytics-cards
-        import streamlit-analytics-cards as stac
+        from streamlit_analytics_cards import card as stac
         import pandas as pd
         import streamlit as st
 

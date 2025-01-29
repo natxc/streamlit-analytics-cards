@@ -1,4 +1,7 @@
 from streamlit_analytics_cards import card as stac
+import pandas as pd
+import streamlit as st
+
 
 data_3 = {
     "template": "CardTwo",
@@ -217,9 +220,6 @@ data_sales = {
 
 # Functions to render the cards
 def render_cards_1():
-    import pandas as pd
-    import streamlit as st
-
     df = pd.DataFrame({"Number of Exits": [10, 20, 15, 30, 25, 10, 20, 15, 0, 7]})
 
     # Optional
@@ -271,3 +271,7 @@ def render_cards_1():
 #     card(data_8, key="card_8")
 #     card(data_projects, key="card_9")
 #     card(data_sales, key="card_10")
+
+
+def render_cards_6():
+    stac(template="CardSix", title="Title", subtitle="Subtitle", key="card_13")

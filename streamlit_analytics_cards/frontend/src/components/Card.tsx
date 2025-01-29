@@ -7,6 +7,7 @@ import CardOne from "./templates/cardOne";
 import CardTwo from "./templates/cardTwo";
 import CardThree from "./templates/cardThree";
 import CardFour from "./templates/cardFour";
+import CardSix from "./templates/cardSix";
 
 interface CardProps {
   template: "CardOne" | "CardTwo" | "CardThree" | "CardFour" | "CardFive";
@@ -97,6 +98,14 @@ class Card extends StreamlitComponentBase<CardProps> {
             colorScheme={colorScheme}
             marker={marker}
             markerLabel={markerLabel}
+          />
+        );
+      case "CardSix":
+        return (
+          <CardSix
+            title={title}
+            subtitle={subtitle}
+            colorScheme={{ ...colorScheme }}
           />
         );
       default:

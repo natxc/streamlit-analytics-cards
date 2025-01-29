@@ -4,6 +4,7 @@ from card_component import (
     # render_cards_2,
     # render_cards_3,
     # render_cards_4,
+    render_cards_6,
 )
 
 if __name__ == "__main__":
@@ -75,3 +76,6 @@ if __name__ == "__main__":
 
     # render_cards_4()
     # st.caption("Template: CardFour")
+
+    render_cards_6()
+    st.caption("Template: CardSix - the blank canvas")
